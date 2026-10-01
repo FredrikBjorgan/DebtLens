@@ -4,6 +4,7 @@ require __DIR__ . '/vendor/autoload.php';
 
 use Fredrik\DebtLens\CodeAnalyzer;
 use Fredrik\DebtLens\Analysis\Rules\TooManyParametersRule;
+use Fredrik\DebtLens\Analysis\Rules\CyclomaticComplexityRule;
 
 $code = file_get_contents(
     __DIR__ . '/examples/bad-code.php'
@@ -11,6 +12,7 @@ $code = file_get_contents(
 
 $analyzer = new CodeAnalyzer([
     new TooManyParametersRule(),
+    new CyclomaticComplexityRule(),
 ]);
 
 $findings = $analyzer->analyze($code);
