@@ -5,7 +5,8 @@ name: Tests
   pull_request:
 
 jobs:
-  test:
+  backend:
+    name: Backend tests
     runs-on: ubuntu-24.04
 
     defaults:
@@ -26,3 +27,33 @@ jobs:
 
       - name: Run tests
         run: php vendor/bin/pest
+
+  frontend:
+    name: Frontend build
+    runs-on: ubuntu-24.04
+
+    defaults:
+      run:
+        working-directory: frontend
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+          cache-dependency-path: frontend/pnpm-lock.yaml
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build frontend
+        run: pnpm build
