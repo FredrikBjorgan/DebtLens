@@ -13,6 +13,8 @@ Run these commands from this directory. The front controller routes requests; th
 
 ## Analyze code
 
+For the React UI, start the frontend in another terminal with `cd ../frontend`, `pnpm install`, and `pnpm dev`. Open **http://127.0.0.1:5173**. Vite forwards API requests to this backend on port 8000. See [frontend instructions](../frontend/README.md).
+
 ```sh
 curl -X POST http://127.0.0.1:8000/api/analyze \
   -H 'Content-Type: application/json' \
