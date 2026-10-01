@@ -1,0 +1,28 @@
+{
+    "name": "fredrik/debtlens",
+    "description": "PHP technical debt analyse verktøy",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+    "psr-4": {
+        "Fredrik\\DebtLens\\": "src/"
+    }
+},
+    "authors": [
+        {
+            "name": "Fredrik Bjørgan"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "nikic/php-parser": "^5.9"
+    },
+    "require-dev": {
+        "pestphp/pest": "^5.2"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
