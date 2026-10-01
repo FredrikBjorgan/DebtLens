@@ -1,8 +1,29 @@
-/vendor/
+# PHP dependencies
+Backend/vendor/
+
+# PHPUnit / Pest
+Backend/.phpunit.cache/
+Backend/.phpunit.result.cache
+
+# Frontend dependencies
+frontend/node_modules/
+
+# Frontend build
+frontend/dist/
+
+# pnpm cache
+.pnpm-store/
+frontend/.pnpm-store/
+
+# Environment files
 .env
-.phpunit.result.cache
-.phpunit.cache/
-.idea/
+Backend/.env
+frontend/.env
+
+# Editors
 .vscode/
+.idea/
+
+# OS files
 .DS_Store
 Thumbs.db
